@@ -4,7 +4,7 @@ import mysql.connector
 mydb = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Joseph500@"
+    password="new"
 )
 
 mycursor = mydb.cursor()
@@ -15,7 +15,7 @@ try:
     CREATE DATABASE IF NOT EXISTS alx_book_store
     """)
     print("Database 'alx_book_store' created successfully!")
-except:
+except mysql.connector.Error:
     print("ERROR")
 
 mydb.commit()
