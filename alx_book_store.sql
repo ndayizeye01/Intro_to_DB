@@ -29,9 +29,10 @@ CREATE TABLE Orders (
 );
 
 CREATE TABLE Order_Details (
-    order_detail_id PRIMARY KEY,
-    order_id FOREIGN KEY REFERENCES Orders.order_id,
-    book_id FOREIGN KEY REFERENCES Books.book_id,
+    order_detail_id INT PRIMARY KEY,
+    order_id INT,
+    book_id INT,
     quantity DOUBLE,
-    FOREIGN KEY (order_id, book_id) REFERENCES (Orders(order_id), Books(book_id))
+    FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+    FOREIGN KEY (BOOK_id) REFERENCES Books(book_id)
 );
